@@ -1,4 +1,5 @@
 import os
+import time
 import random
 
 
@@ -35,3 +36,19 @@ def evolution(u, w, h):
     for y in range(h):
         for x in range(w):
             u[y][x] = new[y][x]
+
+
+if __name__ == "__main__":
+    w = 80
+    h = 20
+    world = [[0 for x in range(w)] for y in range(h)]
+    for x in range(w):
+        for y in range(h):
+            if random.randint(0, 100) % 11 == 0:
+                world[y][x] = 1
+            else:
+                world[y][x] = 0
+    while True:
+        draw(world, w, h)
+        evolution(world, w, h)
+        time.sleep(0.3)
