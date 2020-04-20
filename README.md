@@ -1,11 +1,10 @@
 # game_of_life
 
-<img src="assets/gol.gif" width="30">
-Conway game (zero-player game)
+<img src="assets/gol.gif" width="30"> Conway game (zero-player game)
 
 this app created by python3
 
-for see amazing life of your cells rub below command:
+for see amazing life of your cells run below command:
 
 ```python3 main.py```
 
