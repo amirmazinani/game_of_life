@@ -1,10 +1,17 @@
 import os
 import time
 import random
+import platform
 
 
 # clear system terminal
-def clear(): return os.system('clear')
+def clear():
+    if platform.system() == "Windows":
+        return os.system('cls')
+    elif platform.system() == "Linux":
+        return os.system('clear')
+    else:
+        return os.system('clear')
 
 
 # draw cells in a terminal
