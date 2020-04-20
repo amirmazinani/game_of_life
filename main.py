@@ -3,9 +3,11 @@ import time
 import random
 
 
+# clear system terminal
 def clear(): return os.system('clear')
 
 
+# draw cells in a terminal
 def draw(u, w, h):
     clear()
     for y in range(h):
@@ -17,6 +19,7 @@ def draw(u, w, h):
         print("\n")
 
 
+# evolution live or die of cells
 def evolution(u, w, h):
     new = [[0 for x in range(w)] for y in range(h)]
 
@@ -39,15 +42,20 @@ def evolution(u, w, h):
 
 
 if __name__ == "__main__":
+    # width
     w = 80
+    # height
     h = 20
+    # create default world
     world = [[0 for x in range(w)] for y in range(h)]
+    # set random cells in world
     for x in range(w):
         for y in range(h):
             if random.randint(0, 100) % 11 == 0:
                 world[y][x] = 1
             else:
                 world[y][x] = 0
+    # run for infinite
     while True:
         draw(world, w, h)
         evolution(world, w, h)
